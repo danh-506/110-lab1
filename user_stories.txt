@@ -1,0 +1,5 @@
+As a player of the game, I want to be able to dicate how many cups of lemonade is made based on the cost of each cup so that players can make lemonade but are limited by the cost of it
+
+As a player, I want to be able to see how much money I made in a session so that I can see the total revenue from the lemonade sold per session.
+
+As a player, I want to be able to set the price of the lemonade per cup per session so that the total revenue made a session can vary between sessions.
