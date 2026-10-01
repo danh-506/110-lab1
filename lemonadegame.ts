@@ -65,7 +65,7 @@ let stand: LemonadeStand = {
     price:0,
     cost:getCost(),
     inventory:0,
-    value:150,
+    value:Math.trunc(Math.random()*500),
 }
 
 let earnings: Profits = {
@@ -123,11 +123,35 @@ function gameStart (dayTracker: Days, stand: LemonadeStand, earnings:Profits) {
 }
 
 function results(days:Days, stand:LemonadeStand, earnings:Profits){
+    console.log("\n");
     console.log("----- $$  TODAY'S EARNINGS. $$ -----");
     console.log("Day " + (dayTracker.day-1));
-    console.log()
+    console.log();
+    console.log(earnings.sold + " Glasses sold");
+    console.log("$" + (stand.price/100) + " per glass");
+    console.log("Revenue: $" + (earnings.revenue/100))
+
+    console.log();
+    console.log(stand.inventory + " Glasses made");
+    console.log("Expenses: $" + (earnings.costs/100));
+    console.log();
+
+    console.log("Profits: $" + (earnings.profits/100));
+    console.log("You Have $" + (stand.value/100));
+    console.log();
+
+    console.log("------ $$ REPORT END $$ ------")
 }
 
-gameStart(dayTracker, stand, earnings);
+console.log("\n");
+let daycounter = prompt("How many days do you want to simulate? ");
+let daycounterval = parseInt(daycounter);
+console.log("\n");
+
+for(let i = 0; i < daycounterval; i++){
+    gameStart(dayTracker, stand, earnings);
+    results(dayTracker, stand, earnings);
+}
+
 
 
